@@ -16,8 +16,8 @@ _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`
 1. Для проверки используйте
   * [PixelPerfect](https://www.welldonecode.com/perfectpixel/)
   * [Валидатор](https://validator.w3.org/nu/)
-2. При необходимости внесите правки.
-3. Нажмите на кнопку «Задание готово».
+2. внесены правки.
+
 ---
 
 ### Памятка
