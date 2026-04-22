@@ -275,10 +275,12 @@ input[type="number"] {
   border-radius: 50%;
 }
 
+.link-current,
 .link-current-catalog {
   position: relative;
 }
 
+.link-current::before,
 .link-current-catalog::before {
   position: absolute;
   z-index: 1;
@@ -292,20 +294,11 @@ input[type="number"] {
 }
 
 .link-current {
-  position: relative;
   cursor: default;
 }
 
-.link-current::before {
-  position: absolute;
-  z-index: 1;
-  bottom: -1px;
-  left: 0;
-  width: calc(100% - 12px - 12px);
-  height: 2px;
-  margin-left: 12px;
-  background-color: #756257;
-  content: "";
+.navigation-link ~.link-current:hover {
+  color: inherit;
 }
 
 .navigation-user-item {
@@ -1023,8 +1016,8 @@ h1.catalog-title {
 }
 
 .price-track-button {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -2042,7 +2035,6 @@ h1.catalog-title {
   border-radius: 4px;
   cursor: pointer;
   z-index: 2;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2057,7 +2049,7 @@ h1.catalog-title {
 .decrease:focus-visible svg,
 .increase:hover svg,
 .increase:focus-visible svg {
-  fill: #000;
+  fill: #000000;
 }
 
 .decrease:active svg,
