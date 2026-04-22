@@ -275,10 +275,12 @@ input[type="number"] {
   border-radius: 50%;
 }
 
+.link-current,
 .link-current-catalog {
   position: relative;
 }
 
+.link-current::before,
 .link-current-catalog::before {
   position: absolute;
   z-index: 1;
@@ -292,23 +294,11 @@ input[type="number"] {
 }
 
 .link-current {
-  position: relative;
+  cursor: default;
 }
 
 .navigation-link ~.link-current:hover {
   color: inherit;
-}
-
-.link-current::before {
-  position: absolute;
-  z-index: 1;
-  bottom: -1px;
-  left: 0;
-  width: calc(100% - 12px - 12px);
-  height: 2px;
-  margin-left: 12px;
-  background-color: #756257;
-  content: "";
 }
 
 .navigation-user-item {
@@ -1026,8 +1016,8 @@ h1.catalog-title {
 }
 
 .price-track-button {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -1518,15 +1508,15 @@ h1.catalog-title {
   border-radius: 4px;
 }
 
-.pagination-link:hover:not(.pagination-link_special) {
+.pagination-link:hover:not(.pagination-link-special) {
   background-color: #68a2ca;
 }
 
-.pagination-link:focus:not(.pagination-link_special) {
+.pagination-link:focus:not(.pagination-link-special) {
   background-color: #68a2ca;
 }
 
-.pagination-link:active:not(.pagination-link_special) {
+.pagination-link:active:not(.pagination-link-special) {
   color: rgba(255, 255, 255, 0.3);
   background-color: #82b3d3;
 }
@@ -2012,6 +2002,7 @@ h1.catalog-title {
   display: grid;
   -ms-grid-columns: 40px 1fr 40px;
   grid-template-columns: 40px 1fr 40px;
+  position: relative;
 }
 
 .count-controls button,
@@ -2024,10 +2015,6 @@ h1.catalog-title {
   grid-column: 1;
   -ms-grid-row: 1;
   grid-row: 1;
-  -ms-grid-column-align: center;
-  justify-self: center;
-  -ms-grid-row-align: center;
-  align-self: center;
 }
 
 .increase {
@@ -2035,32 +2022,27 @@ h1.catalog-title {
   grid-column-end: -1;
   -ms-grid-row: 1;
   grid-row: 1;
-  -ms-grid-column-align: center;
-  justify-self: center;
-  -ms-grid-row-align: center;
-  align-self: center;
 }
 
 .decrease,
 .increase {
-  background-color: #f2f2f2;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
   border-radius: 4px;
   cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .decrease svg,
 .increase svg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
   fill: rgba(117, 97, 87, 0.3);
-  z-index: 2;
 }
 
 .decrease:hover svg,
@@ -2079,9 +2061,9 @@ h1.catalog-title {
   grid-column: 1 / -1;
   -ms-grid-row: 1;
   grid-row: 1;
-  padding: 14px 40px;
   width: 100%;
   max-width: 110px;
+  padding: 14px 40px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "PT Sans", "Arial", sans-serif;
@@ -2092,6 +2074,7 @@ h1.catalog-title {
   background-color: #f2f2f2;
   border-radius: 4px;
   z-index: 1;
+  appearance: textfield;
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
