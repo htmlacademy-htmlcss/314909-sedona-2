@@ -6,7 +6,7 @@
     <title>HTML Academy: Гостиницы Седоны</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" type="img/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
   </head>
 
   <body class="main-page">
@@ -56,20 +56,22 @@
       <main class="main-catalog" data-test="main">
         <section class="catalog-header">
           <h1 class="catalog-title">Гостиницы Седоны</h1>
-          <ul class="breadcrumbs">
-            <li class="breadcrumbs-item">
-              <a class="breadcrumbs-link" href="./index.html">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 0L0 5.80006V12.0001H12V5.80006L6 0ZM11 11.0001H1V6.20005L6 1.4L11 6.20005V11.0001Z" fill="currentColor" />
-                  <path d="M4 10.0001H5V7.50005H7V10.0001H8V6.50005H4V10.0001Z" fill="currentColor" />
-                </svg>
-                <span class="visually-hidden">Переход на главную страницу</span>
-              </a>
-            </li>
-            <li class="breadcrumbs-item">
-              <a class="breadcrumbs-link">Гостиницы</a>
-            </li>
-          </ul>
+          <nav aria-label="Хлебные крошки">
+            <ol class="breadcrumbs">
+              <li class="breadcrumbs-item">
+                <a class="breadcrumbs-link" href="./index.html">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 0L0 5.80006V12.0001H12V5.80006L6 0ZM11 11.0001H1V6.20005L6 1.4L11 6.20005V11.0001Z" fill="currentColor" />
+                    <path d="M4 10.0001H5V7.50005H7V10.0001H8V6.50005H4V10.0001Z" fill="currentColor" />
+                  </svg>
+                  <span class="visually-hidden">Переход на главную страницу</span>
+                </a>
+              </li>
+              <li class="breadcrumbs-item">
+                <span class="breadcrumbs-link">Гостиницы</span>
+              </li>
+            </ol>
+          </nav>
           <h2 class="visually-hidden">Перечень фильтров для поиска отелей</h2>
           <form class="filter-list" action="https://echo.htmlacademy.ru/" method="get" data-test="filter">
             <fieldset class="filter-list-options">
@@ -123,8 +125,8 @@
               <div class="price-track">
                 <div class="price-track-scale">
                   <div class="price-track-scale-current" style="right: 63px; width:216px">
-                    <button class="price-track-button track-button-min" type="button"><span class="visually-hidden">Регулиование минимального значения цены</span></button>
-                    <button class="price-track-button track-button-max" type="button"><span class="visually-hidden">Регулиование максимального значения цены</span></button>
+                    <button class="price-track-button track-button-min" type="button"><span class="visually-hidden">Регулирование минимального значения цены</span></button>
+                    <button class="price-track-button track-button-max" type="button"><span class="visually-hidden">Регулирование максимального значения цены</span></button>
                   </div>
                 </div>
               </div>
@@ -138,7 +140,7 @@
         <section class="catalog-section" data-test="catalog">
           <h2 class="visually-hidden">Раздел выбора отеля</h2>
           <div class="catalog">
-            <h2 class="catalog-title">Найдено гостиниц:<span class=catalog_text> 38</span></h2>
+            <h2 class="catalog-title">Найдено гостиниц:<span class="catalog-text"> 38</span></h2>
             <select class="catalog-option" aria-label="Сортировка">
               <option class="catalog-option-text" value="cheap">Сначала дешевые</option>
               <option class="catalog-option-text" value="expensive">Сначала дорогие</option>
@@ -200,7 +202,7 @@
             <li class="card-item">
               <img class="card-picture" src="img/catalog/hotel-2.jpg" width="300" height="212" alt="Скалистое плато">
               <h3 class="card-title" lang="en">Villas at Poco Diablo</h3>
-              <span class="card-price_object">Гостиница</span>
+              <span class="card-price-object">Гостиница</span>
               <b class="card-price-value">От <span>5000</span> ₽</b>
               <a class="card-link" href="#">Подробнее</a>
               <button class="card-wishlist-button card-wishlist-button-selected" type="button">В
@@ -237,7 +239,7 @@
           </ul>
           <ul class="pagination">
             <li class="pagination-item pagination-item-special">
-              <a class="pagination-link-special pagination-link">1</a>
+              <a class="pagination-link-special pagination-link" aria-current="page">1</a>
             </li>
             <li class="pagination-item">
               <a class="pagination-link" href="#">2</a>
@@ -251,7 +253,7 @@
             <li class="pagination-item">
               <span class="pagination-icon">...</span>
             </li>
-            <li class="paginatio-item">
+            <li class="pagination-item">
               <a class="pagination-link" href="#">10</a>
             </li>
           </ul>
@@ -264,8 +266,8 @@
             честное
             бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-            <label class="visually-hidden" for="subscrib-form-catalog">Ввести данные для получения рассылки</label>
-            <input class="user-email" id="subscribe-form-catalog" placeholder="Ваш e-mail" type="Email" name="user-email" required>
+            <label class="visually-hidden" for="subscribe-form-catalog">Ввести данные для получения рассылки</label>
+            <input class="user-email" id="subscribe-form-catalog" placeholder="Ваш e-mail" type="email" name="user-email" required>
             <button class="subscribe-button" type="submit">Подписаться
             </button>
           </form>
